@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-// 导入控制器模块
+/**
+ * import all controller
+ */
 const book_controller = require('../controllers/bookController');
 const author_controller = require('../controllers/authorController');
 const genre_controller = require('../controllers/genreController');

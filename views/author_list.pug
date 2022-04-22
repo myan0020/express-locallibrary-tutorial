@@ -7,12 +7,12 @@ block content
   each author in author_list
     li
       a(href=author.url) #{author.name}
-      if author.date_of_birth_formatted.length > 0
-        |  (#{author.date_of_birth_formatted} 
+      if author.date_of_birth_plain_text_formatted.length > 0
+        |  (#{author.date_of_birth_plain_text_formatted} 
       else 
         |  (Unknown Date
-      if author.date_of_death_formatted.length > 0
-        | - #{author.date_of_death_formatted})
+      if author.date_of_death_plain_text_formatted.length > 0
+        | - #{author.date_of_death_plain_text_formatted})
       else
         | - Unknown Date)
 

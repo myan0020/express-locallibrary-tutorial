@@ -26,9 +26,15 @@ BookInstanceSchema
   });
 
 BookInstanceSchema
-  .virtual('due_back_formatted')
+  .virtual('due_back_plain_text_formatted')
   .get(function () {
-    return moment(this.due_back).format('MMMM Do, YYYY');
+    return this.due_back ? moment(this.due_back).format('MMMM Do, YYYY') : '';
+  })
+
+BookInstanceSchema
+  .virtual('due_back_input_control_formatted')
+  .get(function () {
+    return this.due_back ? moment(this.due_back).format('YYYY-MM-DD') : '';
   })
 // 导出 BookInstancec 模型
 module.exports = mongoose.model('BookInstance', BookInstanceSchema);
