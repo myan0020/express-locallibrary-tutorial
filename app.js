@@ -12,7 +12,7 @@ const app = express();
 /**
  * mongoose connection setup
  */
-const mongooseUrl = 'mongodb://mingdongshensen:mingdongshensen@localhost/admin';
+const mongooseUrl = process.env.MONGODB_URI || 'mongodb://mingdongshensen:mingdongshensen@localhost/admin';
 const mongooseOptions = { dbName: 'test' };       
 mongoose.connect(mongooseUrl, mongooseOptions);   
 mongoose.connection.on('connecting', function(){
